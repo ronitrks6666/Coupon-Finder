@@ -1,0 +1,47 @@
+<%- include('include/_header') %> 
+
+
+
+
+
+
+
+
+<div class="navbar-1">
+    <nav class="navbar navbar-dark bg-dark search-box ">
+        <div class="container-fluid nav-box">
+            <div class="nav-brand">E-COUPON</div>
+            <form class="search-form" method="post" action="/search" autocomplete="off">
+                <input name="name" class="form-control search-box-t me-2" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+    </nav>
+</div>
+
+<div class="product">
+    <div class="p-content">
+
+        <% item.forEach(function (item) { %>
+        <div class="p-item">
+            <div class="item-card">
+                <div class="ic-box-1"><img src="img/<%= item.image %>" alt=""></div>
+                <div class="ic-box-2">
+                    <div class="card-text">
+                        <h2 class="c-title"><%= item.description %> </h2>
+                        <span class="limited-deal">Limited Time Deal</span>
+                        <div class="card-foot">
+                            <h2 class="price">$<%= item.price %>  <span style="text-decoration:line-through;font-size: 0.8rem;">$50
+                                </span></h2>
+                            <div class="buy-btn"><a href="#">Know more</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+      
+    </div>
+</div>
+
+<%- include('include/_footer') %> 

@@ -1,0 +1,36 @@
+<%- include('include/_header') %> 
+
+
+
+
+
+
+
+
+
+<div class="form-box">
+    
+<% item.forEach(function(item){ %> 
+    <form action="/additem?id=<%= item._id %> " method="post" autocomplete="off">
+        <label for="name">BRAND NAME</label>
+        <input type="text" value="<%= item.name %>" name="name">
+        <input type="text" value="<%= item.category %>" name="category">
+        <input type="text" value="<%= item.image %>" name="image">
+        <input type="text" value="<%= item.price %>" name="price">
+        <input type="text" value="<%= item.description %>" name="description">
+        <button type="submit">Submit</button>
+    </form>
+    <% }) %> 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<%- include('include/_footer') %> 

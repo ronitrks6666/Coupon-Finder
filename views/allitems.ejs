@@ -1,0 +1,59 @@
+<%- include('include/_header') %> 
+
+
+
+
+
+
+
+
+<div class="navbar-1">
+    <nav class="navbar navbar-dark bg-dark search-box ">
+        <div class="container-fluid nav-box">
+            <div class="nav-brand">E-COUPON</div>
+            <form class="search-form" method="post" action="/admin/s" autocomplete="off">
+                <input name="name" class="form-control search-box-t me-2" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn search-btn" type="submit"><i class="fa fa-search"
+                        aria-hidden="true"></i></button>
+            </form>
+    </nav>
+</div>
+
+<!-- this is home and all item navigaiton bar -->
+
+<div class="navigation-bar">
+    <div class="nb-content">
+        <div class="nbc-item"><a href="/"> Go To Home page <i class="fas fa-angle-double-right"></i></a></div>
+    </div>
+</div>
+
+
+<div class="all-items">
+
+    <% category.forEach(function (category) {%>
+    <div class="allitem-card">
+        <div class="aic-head">
+            <%= category.category %> 
+        </div>
+        <div class="aic-content">
+            <% product.forEach(function (product) { %>
+                <% if(category.category==product.category) { let i =0  %>
+                    
+                        
+                         <div class="aic-content-box"><a href="/i?name=<%= product.name %> "><img src="img/<%= product.image %>" alt=""></a></div>
+                        
+                      
+                 <% } %>
+            <% }) %>
+        
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+
+</div>
+</div>
+
+<%- include('include/_footer') %> 
